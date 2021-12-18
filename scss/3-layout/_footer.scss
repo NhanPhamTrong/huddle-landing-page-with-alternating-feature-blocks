@@ -1,0 +1,173 @@
+footer {
+    margin-top: 12%;
+    background-color: $footer-background;
+    color: $word-color-1;
+    position: relative;
+
+    #CTA {
+        background-color: $CTA-background;
+        border-radius: 15px;
+        box-shadow: 0 0 20px 0 $shadow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h2 {
+            color: $word-color-2;
+            font-weight: 700;
+        }
+
+        button {
+            @include buttonStyle($CTA-button-background, $word-color-1);
+            padding: 0 15%;
+            box-shadow: 0 10px 15px $shadow;
+        }
+
+        button:hover {
+            background-color: $button-background-hover;
+        }
+    }
+
+    #footer-content {
+        padding: 13% 0 5% 7%;
+        display: grid;
+        grid-column-gap: 3rem;
+        grid-template-columns: 30%;
+
+        span.logo {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .info {
+            grid-column: 1;
+            grid-row: 2;
+
+            p {
+                background-repeat: no-repeat;
+                background-position: top left;
+            }
+
+            .location {
+                background-image: url("../images/icon-location.svg");
+            }
+
+            .phone-number {
+                background-image: url("../images/icon-phone.svg");
+            }
+
+            .email {
+                background-image: url("../images/icon-email.svg");
+            }
+        }
+
+        .container {
+            grid-column: 2/4;
+            grid-row: 2;
+
+            .row {
+                .col {
+                    display: flex;
+                    flex-direction: column;
+
+                    a {
+                        color: $word-color-1;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .social-media {
+            grid-column: 4;
+            grid-row: 2;
+
+            
+                a {
+                    border-color: #fff;
+                    border-radius: 50px;
+                    border-style: solid;
+                    border-width: 1px;
+                    color: $word-color-1;
+
+                    svg {
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+
+                a:hover {
+                    border-color: $social-media-icon-hover;
+                    color: $social-media-icon-hover;
+                }
+        }
+
+        p.copyright {
+            grid-column: 4;
+            grid-row: 3;
+            color: $word-color-3;
+            font-size: 12px;
+        }
+    }
+
+    .attribution {
+        background-color: #fff;
+        color: #000;
+        font-size: 11px;
+        text-align: center;
+
+        a {
+            color: hsl(228, 45%, 44%);
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    footer {
+        #CTA {
+            width: 95%;
+
+            h2 {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+    
+            button {
+                @include buttonStyle($CTA-button-background, $word-color-1);
+                padding: 0 15%;
+                box-shadow: 0 10px 15px $shadow;
+            }
+    
+            button:hover {
+                background-color: $button-background-hover;
+            }
+        }
+
+        #footer-content {
+            padding: 50% 0 5% 7%;
+            grid-column-gap: 0;
+            grid-template-columns: 100%;
+
+            .container {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .social-media {
+                grid-column: 1;
+                grid-row: 4;
+                justify-self: center;
+            }
+
+            p.copyright {
+                grid-column: 1;
+                grid-row: 5;
+                text-align: center;
+            }
+        }
+    }
+}
